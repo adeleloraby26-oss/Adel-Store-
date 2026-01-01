@@ -1,0 +1,160 @@
+:root{
+  --bg:#05060b;
+  --purple:#8a6bff;
+  --cyan:#19f0ff;
+  --text:#eef0ff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'El Messiri',Arial,sans-serif;
+  background:radial-gradient(900px 450px at 85% -10%,#2a1d60,transparent 60%),
+             radial-gradient(700px 350px at -10% 20%,#003b4a,transparent 55%),
+             linear-gradient(180deg,#05060b,#070818);
+  color:var(--text);
+  min-height:100vh;
+}
+.container{max-width:1200px;margin:auto;padding:40px 20px;text-align:center}
+
+/* الهيدر */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 40px auto;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:linear-gradient(135deg,rgba(138,107,255,.1),rgba(25,240,255,.08));
+  box-shadow:0 12px 50px rgba(138,107,255,.2);
+  backdrop-filter:blur(8px)
+}
+.logo img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 0 35px rgba(138,107,255,.6);
+}
+
+/* ترسانتي */
+.trassanti{
+  margin-bottom:40px;
+  text-align:center;
+  font-size:2.8em;
+  color:#8a6bff;
+  font-weight:700;
+  text-shadow:0 0 10px rgba(138,107,255,.3);
+}
+
+/* الأكونتات */
+.accounts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:25px;
+  margin-bottom:60px;
+}
+.account-card{
+  position:relative;
+  background:linear-gradient(180deg,#11142f,#0c0f26);
+  border:1px solid rgba(138,107,255,.3);
+  border-radius:26px;
+  overflow:hidden;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition:.35s ease;
+}
+.account-card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 30px 90px rgba(138,107,255,.45);
+}
+.account-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  transition:.3s;
+}
+.account-card img:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px rgba(138,107,255,.7);
+}
+.account-card .content{
+  padding:16px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.account-card .description{
+  font-size:15px;
+  color:#ccc;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+
+/* أزرار */
+.btn-group{display:flex;gap:10px;margin-top:10px}
+.btn-whatsapp{
+  flex:1;
+  padding:12px;
+  border-radius:18px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  color:#000;
+  transition:.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.btn-whatsapp:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(138,107,255,.6);
+}
+
+/* Shine */
+.shine{
+  position:absolute;
+  top:0;left:-75%;
+  width:50%;height:100%;
+  background:linear-gradient(120deg,rgba(255,255,255,.3),rgba(255,255,255,0),rgba(255,255,255,.3));
+  transform:skewX(-20deg);
+  opacity:0;
+}
+.account-card:hover .shine{
+  opacity:1;
+  animation:cardShine 1s forwards;
+}
+@keyframes cardShine{to{left:125%}}
+
+/* Contact */
+.contact-section{
+  margin-top:80px;
+  padding:50px 20px;
+  background:linear-gradient(135deg,rgba(138,107,255,.08),rgba(25,240,255,.05));
+  border-radius:30px;
+  border:1px solid rgba(138,107,255,.25);
+}
+.contact-methods{display:flex;justify-content:center;gap:25px}
+.contact-methods a{
+  padding:12px 20px;
+  border-radius:20px;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+}
+.contact-form{display:flex;flex-direction:column;gap:15px;max-width:500px;margin:auto}
+.contact-form input,
+.contact-form textarea{
+  padding:12px;
+  border-radius:15px;
+  border:none;
+  background:#11142f;
+  color:#fff;
+  text-align:left;
+}
+.footer{margin-top:70px;padding:35px;border-top:1px solid rgba(138,107,255,.25)}
