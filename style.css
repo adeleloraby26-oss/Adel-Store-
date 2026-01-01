@@ -29,14 +29,14 @@ body{
   backdrop-filter:blur(8px)
 }
 .logo img{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
   box-shadow:0 0 35px rgba(138,107,255,.6);
 }
 
-/* ترسانتي */
+/* ترسانتي كتابة فقط */
 .trassanti{
   margin-bottom:40px;
   text-align:center;
@@ -46,7 +46,7 @@ body{
   text-shadow:0 0 10px rgba(138,107,255,.3);
 }
 
-/* الأكونتات */
+/* قسم الأكونتات */
 .accounts-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
@@ -92,10 +92,20 @@ body{
   line-height:1.5;
   margin-bottom:10px;
 }
+.account-card .price{
+  font-size:28px;
+  font-weight:900;
+  margin:10px 0;
+  text-shadow:0 0 25px rgba(138,107,255,.6);
+}
 
-/* أزرار */
-.btn-group{display:flex;gap:10px;margin-top:10px}
-.btn-whatsapp{
+/* أزرار واتساب */
+.account-card .btn-group{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.account-card .btn-whatsapp{
   flex:1;
   padding:12px;
   border-radius:18px;
@@ -110,51 +120,79 @@ body{
   justify-content:center;
   gap:8px;
 }
-.btn-whatsapp:hover{
+.account-card .btn-whatsapp:hover{
   transform:scale(1.05);
   box-shadow:0 0 25px rgba(138,107,255,.6);
 }
 
-/* Shine */
-.shine{
+/* shine عند hover */
+.account-card .shine{
   position:absolute;
-  top:0;left:-75%;
-  width:50%;height:100%;
-  background:linear-gradient(120deg,rgba(255,255,255,.3),rgba(255,255,255,0),rgba(255,255,255,.3));
+  top:0; left:-75%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg, rgba(255,255,255,.3), rgba(255,255,255,0), rgba(255,255,255,.3));
   transform:skewX(-20deg);
+  pointer-events:none;
   opacity:0;
+  transition:opacity .3s;
 }
 .account-card:hover .shine{
   opacity:1;
   animation:cardShine 1s forwards;
 }
-@keyframes cardShine{to{left:125%}}
+@keyframes cardShine{
+  0%{left:-75%;}
+  100%{left:125%;}
+}
 
-/* Contact */
+/* Footer */
+.footer{margin-top:70px;padding:35px;text-align:center;border-top:1px solid rgba(138,107,255,.25)}
+.footer a{color:var(--cyan);text-decoration:none}
+
+/* Contact Section */
 .contact-section{
   margin-top:80px;
   padding:50px 20px;
   background:linear-gradient(135deg,rgba(138,107,255,.08),rgba(25,240,255,.05));
   border-radius:30px;
+  text-align:center;
   border:1px solid rgba(138,107,255,.25);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
-.contact-methods{display:flex;justify-content:center;gap:25px}
-.contact-methods a{
-  padding:12px 20px;
-  border-radius:20px;
-  background:linear-gradient(135deg,var(--purple),var(--cyan));
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-}
+.contact-section h2{font-size:2.5em;margin-bottom:10px;color:#8a6bff;text-shadow:0 0 15px rgba(138,107,255,.3)}
+.contact-section p{color:#d8dbff;margin-bottom:25px;font-size:1.1em}
+.contact-methods{display:flex;justify-content:center;gap:25px;margin-bottom:25px}
+.contact-methods a{display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:20px;background:linear-gradient(135deg,var(--purple),var(--cyan));color:#fff;font-weight:700;text-decoration:none;transition:.3s}
+.contact-methods a:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(138,107,255,.7)}
 .contact-form{display:flex;flex-direction:column;gap:15px;max-width:500px;margin:auto}
 .contact-form input,
 .contact-form textarea{
-  padding:12px;
+  padding:12px 15px;
   border-radius:15px;
   border:none;
   background:#11142f;
   color:#fff;
+  font-size:1em;
+  resize:none;
   text-align:left;
 }
-.footer{margin-top:70px;padding:35px;border-top:1px solid rgba(138,107,255,.25)}
+.contact-form button{
+  padding:14px 20px;
+  border-radius:20px;
+  border:none;
+  background:linear-gradient(135deg,var(--purple),var(--cyan));
+  color:#fff;
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s
+}
+.contact-form button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(138,107,255,.7)
+}
+@media(max-width:768px){
+  .header{margin-bottom:20px}
+  .contact-methods{flex-direction:column;gap:15px}
+  }
