@@ -4,57 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adel Store</title>
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- CSS File -->
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+   (function(){emailjs.init("EVoln6UPaKuTu5oy5");})();
+</script>
 </head>
-
 <body>
 <div class="container">
-  <div class="header">
-    <div class="logo"><img src="me.jpg" alt="Logo"></div>
+  <div class="header"><div class="logo"><img src="me.jpg" alt="Logo"></div></div>
+  <div class="trassanti">
+    Adel Store <span class="verified-badge"><i class="fas fa-check"></i></span>
   </div>
-
-  <div class="trassanti">Adel Store</div>
-
   <div class="accounts-grid" id="accounts-grid"></div>
-
   <div class="contact-section">
     <h2>تواصل معنا</h2>
     <p>لو عندك أي استفسار أو محتاج مساعدة، تواصل معنا فورًا:</p>
-
     <div class="contact-methods">
-      <a href="https://wa.me/201014977860" target="_blank">
-        <i class="fab fa-whatsapp"></i> واتساب
-      </a>
-      <a href="mailto:adeleloraby26@gmail.com">
-        <i class="fas fa-envelope"></i> البريد الإلكتروني
-      </a>
-      <a href="tel:+201227675955">
-        <i class="fas fa-phone"></i> اتصال
-      </a>
+      <a href="https://wa.me/01227675955" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+      <a href="mailto:adeleloraby26@gmail.com"><i class="fas fa-envelope"></i> البريد الإلكتروني</a>
+      <a href="tel:+201227675955"><i class="fas fa-phone"></i> اتصال</a>
     </div>
+    <div class="social-icons" id="social-icons"></div>
 
     <form class="contact-form" onsubmit="sendMessage(event)">
-      <input type="text" placeholder="01XXXXXXXXX" name="name" required>
-      <input type="email" placeholder="example@gmail.com" name="email" required>
-      <textarea placeholder="...Topic" name="message" required></textarea>
-      <button type="submit">إرسال</button>
+      <div class="input-box">
+        <input type="text" name="name" placeholder="" data-helper="01XXX" required>
+        <label>رقم الهاتف</label>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" placeholder="" data-helper="example@gmail.com" required>
+        <label>البريد الإلكتروني</label>
+      </div>
+      <div class="input-box">
+        <textarea name="message" placeholder="" data-helper="اكتب رسالتك هنا....." required></textarea>
+        <label>الموضوع</label>
+      </div>
+      <button type="submit" id="submit-btn">
+        <span class="btn-text">إرسال</span>
+        <span class="btn-success"><i class="fas fa-check"></i> تم الإرسال</span>
+      </button>
     </form>
   </div>
-
   <div class="footer">
     <p>Made with <a href="https://wa.me/201227675955" target="_blank">Adel Eloraby</a></p>
   </div>
 </div>
 
-<!-- JS File -->
 <script src="script.js"></script>
 </body>
-</html>
+  </html>
